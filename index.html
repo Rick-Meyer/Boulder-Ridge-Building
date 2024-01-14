@@ -34,8 +34,8 @@
         <script src="data/Rooms_2.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[37.07726905029402,-113.5562549495446],[37.07882314648332,-113.55322225537219]]);
+            zoomControl:true, maxZoom:28, minZoom:2
+        }).fitBounds([[37.077834593120926,-113.55505320041107],[37.078308333148264,-113.55412873440262]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -49,7 +49,7 @@
             pane: 'pane_GoogleHybrid_0',
             opacity: 1.0,
             attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-            minZoom: 1,
+            minZoom: 2,
             maxZoom: 28,
             minNativeZoom: 0,
             maxNativeZoom: 20
@@ -136,7 +136,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Room'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Room']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Rooms_2'});
+            layer.bindTooltip((layer.feature.properties['Room'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Room']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Rooms_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
